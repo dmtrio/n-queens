@@ -191,6 +191,24 @@
         }
       }
       return false;
+    },
+    
+    setCoordinates: function(row, col, val) {
+      var currentRow = this.get(row);
+      currentRow[col] = val;
+      this.set(row, currentRow);
+    },
+    
+    matricesAreEqual: function (a, b) {
+      var length = a.length;
+      for (var i = 0; i < length; i++) {
+        for (var j = 0; j < length; j++) {
+          if (a[i][j] !== b[i][j]) {
+            return false;
+          }
+        }
+      }
+      return true;
     }
 
     /*--------------------  End of Helper Functions  ---------------------*/
