@@ -6,7 +6,6 @@ describe('solvers', function() {
     it('finds a valid solution for n of 1-8', function() {
       _.range(1, 9).map(function(n) {
         var solution = findNRooksSolution(n);
-        console.log(solution);
         var solutionBoard = new Board(solution);
         var numPieces = _.reduce(solutionBoard.rows(), function(memo, row) {
           return memo + _.reduce(row, function(memo, col) {
@@ -41,6 +40,7 @@ describe('solvers', function() {
       // Skip 2 and 3 because they have no solution.
       [0, 1, 4, 5, 6, 7, 8].map(function(n) {
         var solutionBoard = new Board(findNQueensSolution(n));
+        console.log(solutionBoard);
         var numPieces = _.reduce(solutionBoard.rows(), function(memo, row) {
           return memo + _.reduce(row, function(memo, col) {
             return memo + col;
